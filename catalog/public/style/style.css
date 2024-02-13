@@ -1,0 +1,32 @@
+*
+{
+    box-sizing: border-box;
+    font-family: Montserrat,Helvetica,Arial,sans-serif;
+    font-size: 34px;
+    margin: 0px;
+}
+body
+{
+    background-color: #f7f7f7;
+}
+header
+{
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 3px 20px 0px rgba(0,0,0,.1);
+}
+.header_container
+{
+    display: flex;
+    flex-direction: row;
+    width: 1280px;
+    justify-content: space-around;
+    align-items: center;
+}
+.header_element
+{
+
+}
