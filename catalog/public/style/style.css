@@ -26,7 +26,68 @@ header
     justify-content: space-around;
     align-items: center;
 }
+.container
+{
+    display: flex;
+    flex-direction: row;
+
+}
 .header_element
 {
 
+}
+#app
+{
+    display: flex;
+    flex-direction: row;
+    /*justify-content: center;*/
+    position: relative;
+    left: 0px;
+}
+sidebar
+{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    position: relative;
+    left: 0px;
+}
+.headfilter
+{
+    display: flex;
+    justify-content: center;
+}
+#filterinput
+{
+    width: 100%;
+
+}
+.tags_container
+{
+    overflow: auto;
+    height: 350px;
+}
+.tags_container li
+{
+    list-style: none;
+}
+.labelfortags_container
+{
+    text-align: center;
+}
+.filters
+{
+    background-color: rgb(224, 224, 224);
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.cards_container
+{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 400px 400px 400px;
+}
+.card
+{
+    
 }
