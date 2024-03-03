@@ -7,22 +7,25 @@
        "pictures": [
           {
              "name": "Берег моря ночью. У маяка",
-             "genres": ["asd","zxc", "asdas1", "asda2s1", "asda3s1", "asd4as1", "asdaas1", "asdass1", "asdasd1"],
-             "techniques": ["холст","масло"],
+             "genres": ["Пейзаж"],
+             "styles": ["Реализм"],
+             "techniques": ["Холст","Масло"],
              "year": 1837,
              "path": "./images/pictures/Берег_моря_ночью._У_маяка.jpg"
           },
           {
             "name": "Фрегат на море",
-            "genres": ["2s","asd"],
-            "techniques": ["холст","масло"],
+            "genres": ["Пейзаж"],
+            "styles": ["Реализм"],
+            "techniques": ["Холст","Масло"],
             "year": 1838,
             "path": "./images/pictures/Фрегат_на_море.jpg"
          },
          {
             "name": "Девятый вал",
-            "genres": ["3s","s4"],
-            "techniques": ["холст","масло"],
+            "genres": ["Пейзаж"],
+            "styles": ["Реализм"],
+            "techniques": ["Холст","Масло"],
             "year": 1850,
             "path": "./images/pictures/Девятый_вал.jpg"
          }

@@ -1,6 +1,7 @@
 <template>
     <div class="cards_container">
-        <div v-for="item in items" class="card" v-bind:style="{ backgroundImage: 'url(' + item.path + ')' }">
+        <div v-for="item in items" class="card">
+            <img class="imgCard" v-bind:src="item.path" alt="">
         </div>
     </div>
 </template>
