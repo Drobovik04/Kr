@@ -12,7 +12,7 @@ export default
 {
     props:{
         items:{
-            type:Array,
+            type: Object,
             required:true
         }
         
@@ -21,5 +21,5 @@ export default
 </script>
     
 <style>
-    
+
 </style>
