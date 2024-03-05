@@ -118,3 +118,16 @@ sidebar
     width: 100%;
     height: 150px;
 }
+
+.about_head
+{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.description
+{
+    text-align: justify;
+    margin: 30px 150px 30px 150px
+}
