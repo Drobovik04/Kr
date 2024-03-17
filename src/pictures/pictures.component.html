@@ -1,0 +1,68 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened>
+        <div class="filters search">
+            <mat-form-field appearance="outline">
+                <mat-label>Поиск по имени</mat-label>
+                <input matInput [formControl]="searchControl" (keydown.enter) = onSearch(searchControl.value) placeholder="Ввведите имя">
+                <mat-icon matSuffix (click)="onSearch(searchControl.value )">search</mat-icon>
+            </mat-form-field>
+            <button mat-icon-button matTooltip="Очистить фильтры" color="primary" class="reset" (click)="onClearAll()">
+                <mat-icon>delete_outline</mat-icon>
+            </button>
+        </div>
+        <div class="filters">
+            <mat-radio-group class="filter-container">
+                <div class="labelfortags_container">Жанр</div>
+                <mat-radio-button [checked]="selectedGenres.includes('Пейзаж')" color="primary"
+                    (change)="onSelectGenre($event)" value="Пейзаж">Пейзаж</mat-radio-button>
+                <mat-radio-button [checked]="selectedGenres.includes('Портрет')" color="primary"
+                    (change)="onSelectGenre($event)" value="Портрет">Портрет</mat-radio-button>
+            </mat-radio-group>
+            <mat-radio-group class="filter-container">
+                <div class="labelfortags_container">Стиль</div>
+                <mat-radio-button [checked]="selectedStyles.includes('Реализм')" color="primary"
+                    (change)="onSelectStyle($event)" value="Реализм">Реализм</mat-radio-button>
+                <mat-radio-button [checked]="selectedStyles.includes('Графика')" color="primary"
+                    (change)="onSelectStyle($event)" value="Графика">Графика</mat-radio-button>
+                <mat-radio-button [checked]="selectedStyles.includes('Импрессионизм')" color="primary"
+                    (change)="onSelectStyle($event)" value="Импрессионизм">Импрессионизм</mat-radio-button>
+            </mat-radio-group>
+            <mat-radio-group class="filter-container">
+                <div class="labelfortags_container">Техника</div>
+                <mat-radio-button [checked]="selectedTechniques.includes('Холст')" color="primary"
+                    (change)="onSelectTechnique($event)" value="Холст">Холст</mat-radio-button>
+                <mat-radio-button [checked]="selectedTechniques.includes('Масло')" color="primary"
+                    (change)="onSelectTechnique($event)" value="Холст">Масло</mat-radio-button>
+                <mat-radio-button [checked]="selectedTechniques.includes('Папье пелле')" color="primary"
+                    (change)="onSelectTechnique($event)" value="Папье пелле">Папье
+                    пелле</mat-radio-button>
+                <mat-radio-button [checked]="selectedTechniques.includes('Карандаш')" color="primary"
+                    (change)="onSelectTechnique($event)" value="Карандаш">Карандаш</mat-radio-button>
+                <mat-radio-button [checked]="selectedTechniques.includes('Цветные карандаши')" color="primary"
+                    (change)="onSelectTechnique($event)" value="Цветные карандаши">Цветные
+                    карандаши</mat-radio-button>
+                <mat-radio-button [checked]="selectedTechniques.includes('Бумага')" color="primary"
+                    (change)="onSelectTechnique($event)" value="Бумага">Бумага</mat-radio-button>
+                <mat-radio-button [checked]="selectedTechniques.includes('Тушь')" color="primary"
+                    (change)="onSelectTechnique($event)" value="Тушь">Тушь</mat-radio-button>
+                <mat-radio-button [checked]="selectedTechniques.includes('Акварель')" color="primary"
+                    (change)="onSelectTechnique($event)" value="Акварель">Акварель</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content-container">
+        <div class="wrapper">
+            @for (picture of pictures; track picture) {
+            <mat-card class="card">
+                <mat-card-header>
+                    <img mat-card-image [src]="picture.path" alt="">
+                </mat-card-header>
+                <mat-card-subtitle>
+                    <mat-card-title>{{picture.name}}</mat-card-title>
+                </mat-card-subtitle>
+            </mat-card>
+            }
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

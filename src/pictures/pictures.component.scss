@@ -1,0 +1,96 @@
+:host {
+    display: flex;
+    flex: 1;
+    height: max-content;
+    overflow: auto;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.mat-mdc-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mat-mdc-card-image {
+    width: 220px;
+    height: 220px;
+}
+
+.content-container {
+    display: grid;
+}
+
+mat-card {
+    display: flex;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgb(19 37 47 /35%);
+    border-radius: 20px;
+    max-height: max-content;
+    background: rgb(19 37 47 / 25%);
+    background-image: linear-gradient(to top left,rgba(95, 97, 114, 0.377) 50%, transparent 50%);
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    transition: .4s;
+    min-height: 320px;
+
+    mat-card-header,
+    mat-card-subtitle,
+    mat-card-content {
+        flex: 1;
+    }
+
+    mat-card-subtitle {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    mat-card-title {
+        color: rgb(101 105 105);
+    }
+
+}
+mat-card:hover{
+    background-position: 0 20%;
+}
+
+mat-sidenav {
+    width: 300px;
+    padding-left: 20px;
+}
+
+mat-sidenav-content {
+    margin-left: 300px;
+}
+
+mat-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filters.search {
+    padding-top: 24px;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(320px,1fr));
+    justify-content: center;
+    padding: 20px;
+}
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+.filters.search {
+    display: flex;
+}
