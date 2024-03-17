@@ -1,0 +1,74 @@
+<mat-toolbar color="primary">
+  <div class="container">
+    <button color="accent" type="button" mat-raised-button class="filters-btn" (click)="drawer.toggle()">
+        Фильтр
+    </button>
+    <button (click)="isAuthors = true; isAbout = false" mat-button>Художники</button>
+    <button (click)="isAuthors = false; isAbout = false" mat-button>Картины</button>
+    <button (click)="isAbout = true" [routerLink]="'/about'" mat-button>О сайте</button>
+  </div>
+</mat-toolbar>
+<div class="content">
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <div class="filters">
+            <mat-form-field class="example-full-width">
+                <mat-label>По имени</mat-label>
+                <input matInput>
+              </mat-form-field>
+        </div>
+        <div class="filters">
+            <div class="filter-container">
+                <div class="labelfortags_container">Жанр</div>
+                <mat-checkbox id="genre" (change)="onSelectGenre('Пейзаж', 'genre')" value="Пейзаж">Пейзаж</mat-checkbox>
+            </div>
+            <div class="filter-container">
+                <div class="labelfortags_container">Стиль</div>
+                <mat-checkbox (change)="onSelectStyle($event, 'Реализм')" value="Реализм">Реализм</mat-checkbox>
+                <mat-checkbox (change)="onSelectStyle($event, 'Графика')" value="Графика">Графика</mat-checkbox>
+                <mat-checkbox (change)="onSelectStyle($event, 'Импрессионизм')" value="Импрессионизм">Импрессионизм</mat-checkbox>
+            </div>
+            <div class="filter-container">
+                <div class="labelfortags_container">Техника</div>
+                <mat-checkbox (change)="onSelectTechnique($event, 'Холст')" value="Холст">Холст</mat-checkbox>
+                <mat-checkbox (change)="onSelectTechnique($event, 'Холст')" value="Холст">Масло</mat-checkbox>
+                <mat-checkbox (change)="onSelectTechnique($event, 'Папье пелле')" value="Папье пелле">Папье пелле</mat-checkbox>
+                <mat-checkbox (change)="onSelectTechnique($event, 'Карандаш')" value="Карандаш">Карандаш</mat-checkbox>
+                <mat-checkbox (change)="onSelectTechnique($event, 'Цветные карандаши')" value="Цветные карандаши">Цветные карандаши</mat-checkbox>
+                <mat-checkbox (change)="onSelectTechnique($event, 'Бумага')" value="Бумага">Бумага</mat-checkbox>
+                <mat-checkbox (change)="onSelectTechnique($event, 'Тушь')" value="Тушь">Тушь</mat-checkbox>
+                <mat-checkbox (change)="onSelectTechnique($event, 'РеаАкварельлизм')" value="Акварель">Акварель</mat-checkbox>
+            </div>
+        </div>
+    </mat-drawer>
+    @if(isAuthors && !isAbout) {
+      <div class="content-container">
+        @for (author of authors; track author) {
+            <mat-card class="card">
+                <mat-card-header>
+                    <img mat-card-image [src]="author.path" alt="">
+                </mat-card-header>
+                <mat-card-subtitle>
+                    <mat-card-title>{{author.name}}</mat-card-title>
+                </mat-card-subtitle>
+            </mat-card>
+        }
+    </div>
+    } @else if(!isAbout) {
+      <div class="content-container">
+        @for (picture of pictures; track picture) {
+            <mat-card class="card">
+                <mat-card-header>
+                    <img mat-card-image [src]="picture.path" alt="">
+                </mat-card-header>
+                <mat-card-subtitle>
+                    <mat-card-title>{{picture.name}}</mat-card-title>
+                </mat-card-subtitle>
+            </mat-card>
+        }
+    </div>
+    } @else {
+        <router-outlet></router-outlet>
+    }
+  </mat-drawer-container>
+</div>
