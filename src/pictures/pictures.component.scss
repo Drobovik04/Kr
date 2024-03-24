@@ -68,7 +68,7 @@ mat-sidenav-content {
     margin-left: 300px;
 }
 
-mat-radio-group {
+.filter-container {
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -93,4 +93,11 @@ mat-sidenav-container {
 
 .filters.search {
     display: flex;
+}
+
+mat-checkbox{
+    --mdc-checkbox-selected-focus-state-layer-color: transparent !important;
+    --mdc-checkbox-unselected-focus-state-layer-color: transparent !important;
+    --mdc-checkbox-unselected-pressed-state-layer-color: transparent !important;
+    --mdc-checkbox-selected-pressed-state-layer-color: transparent !important;
 }

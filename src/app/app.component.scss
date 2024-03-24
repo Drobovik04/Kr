@@ -1,85 +1,17 @@
+:host {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .content {
-    display: flex;
-    flex: 1;
-
-    min-height: 100%;
+  display: flex;
+  flex: 1;
+  overflow: auto;
 }
 
-mat-sidenav {
-    background-color: aquamarine;
+.mat-mdc-tab-nav-bar {
+  display: flex;
+  height: 50px;
+  background: rgb(19 37 47 / 25%);
+  z-index: 2;
 }
-
-.example-container {
-    display: flex;
-    flex: 1;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-
-    .mat-drawer-content {
-        display: flex;
-        flex: 1;
-    }
-}
-
-.sidenav-content {
-    position: relative;
-    display: flex;
-    //min-height: 100%;
-    overflow: auto;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-
-    .filters-btn {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 3;
-    }
-  }
-
-  .filter-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .example-sidenav {
-    padding: 20px;
-  }
-
-  .mat-mdc-card-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .mat-mdc-card-image {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .content-container{ //
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      padding: 10px;
-      gap: 10px;
-  }
-  
-  mat-card {
-      display: flex;
-      box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
-      border: 1px solid rgba(0,0,0,0.3);
-      border-radius: 20px;
-      max-height: max-content;
-  
-      mat-card-header,
-      mat-card-subtitle,
-      mat-card-content {
-          flex: 1;
-      }
-  
-      mat-card-subtitle {
-          padding: 10px;
-      }
-  
-  }

@@ -1,7 +1,10 @@
 @import './theme.scss';
 
 
-html, body { height: 100%; }
+html,
+body {
+    height: 100%;
+}
 
 html {
     overflow: hidden;
@@ -11,6 +14,7 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     margin: 0;
 }
+
 app-root {
     display: flex;
     flex-direction: column;

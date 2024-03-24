@@ -10,8 +10,25 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-about-project',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatSidenavModule, MatInputModule, MatCheckboxModule, RouterOutlet],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatInputModule,
+    MatCheckboxModule,
+    RouterOutlet,
+  ],
   templateUrl: './about-project.component.html',
-  styleUrl: './about-project.component.scss'
+  styleUrl: './about-project.component.scss',
 })
-export class AboutProjectComponent {}
+export class AboutProjectComponent {
+  @Input() pictures: {
+    name: string;
+    genres: string[];
+    styles: string[];
+    techniques: string[];
+    year: string;
+    path: string;
+  }[] = [];
+}

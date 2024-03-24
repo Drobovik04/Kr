@@ -11,43 +11,21 @@
             </button>
         </div>
         <div class="filters">
-            <mat-radio-group class="filter-container">
+            <!-- Жанры -->
+            <div class="filter-container">
                 <div class="labelfortags_container">Жанр</div>
-                <mat-radio-button [checked]="selectedGenres.includes('Пейзаж')" color="primary"
-                    (change)="onSelectGenre($event)" value="Пейзаж">Пейзаж</mat-radio-button>
-                <mat-radio-button [checked]="selectedGenres.includes('Портрет')" color="primary"
-                    (change)="onSelectGenre($event)" value="Портрет">Портрет</mat-radio-button>
-            </mat-radio-group>
-            <mat-radio-group class="filter-container">
+                <mat-checkbox *ngFor="let genre of availableGenres" (change)="onSelectGenre($event, genre)" [value]="genre" color="primary" >{{ genre }}</mat-checkbox>
+            </div>
+            <!-- Стили -->
+            <div class="filter-container">
                 <div class="labelfortags_container">Стиль</div>
-                <mat-radio-button [checked]="selectedStyles.includes('Реализм')" color="primary"
-                    (change)="onSelectStyle($event)" value="Реализм">Реализм</mat-radio-button>
-                <mat-radio-button [checked]="selectedStyles.includes('Графика')" color="primary"
-                    (change)="onSelectStyle($event)" value="Графика">Графика</mat-radio-button>
-                <mat-radio-button [checked]="selectedStyles.includes('Импрессионизм')" color="primary"
-                    (change)="onSelectStyle($event)" value="Импрессионизм">Импрессионизм</mat-radio-button>
-            </mat-radio-group>
-            <mat-radio-group class="filter-container">
+                <mat-checkbox *ngFor="let style of availableStyles" (change)="onSelectStyle($event, style)" [value]="style" color="primary">{{ style }}</mat-checkbox>
+            </div>
+            <!-- Техники -->
+            <div class="filter-container">
                 <div class="labelfortags_container">Техника</div>
-                <mat-radio-button [checked]="selectedTechniques.includes('Холст')" color="primary"
-                    (change)="onSelectTechnique($event)" value="Холст">Холст</mat-radio-button>
-                <mat-radio-button [checked]="selectedTechniques.includes('Масло')" color="primary"
-                    (change)="onSelectTechnique($event)" value="Холст">Масло</mat-radio-button>
-                <mat-radio-button [checked]="selectedTechniques.includes('Папье пелле')" color="primary"
-                    (change)="onSelectTechnique($event)" value="Папье пелле">Папье
-                    пелле</mat-radio-button>
-                <mat-radio-button [checked]="selectedTechniques.includes('Карандаш')" color="primary"
-                    (change)="onSelectTechnique($event)" value="Карандаш">Карандаш</mat-radio-button>
-                <mat-radio-button [checked]="selectedTechniques.includes('Цветные карандаши')" color="primary"
-                    (change)="onSelectTechnique($event)" value="Цветные карандаши">Цветные
-                    карандаши</mat-radio-button>
-                <mat-radio-button [checked]="selectedTechniques.includes('Бумага')" color="primary"
-                    (change)="onSelectTechnique($event)" value="Бумага">Бумага</mat-radio-button>
-                <mat-radio-button [checked]="selectedTechniques.includes('Тушь')" color="primary"
-                    (change)="onSelectTechnique($event)" value="Тушь">Тушь</mat-radio-button>
-                <mat-radio-button [checked]="selectedTechniques.includes('Акварель')" color="primary"
-                    (change)="onSelectTechnique($event)" value="Акварель">Акварель</mat-radio-button>
-            </mat-radio-group>
+                <mat-checkbox *ngFor="let technique of availableTechniques" (change)="onSelectTechnique($event, technique)" [value]="technique" color="primary" >{{ technique }}</mat-checkbox>
+            </div>
         </div>
     </mat-sidenav>
 
