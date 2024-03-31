@@ -8,34 +8,50 @@
     height: 100%;
 }
 
-.mat-mdc-card-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
 .mat-mdc-card-image {
-    width: 220px;
-    height: 220px;
+  width: 100%;
+  object-fit: contain; /* Масштабирование изображения, чтобы оно целиком поместилось в контейнере */
+  border: 6px solid rgba(80, 64, 52, 0.99); /* Цвет и толщина рамки */
+  box-shadow: 2px 2px 5px rgba(63, 63, 65, 0.67);
+
 }
+
+.image-container {
+  width: 220px; /* Ширина контейнера */
+  height: 220px; /* Высота контейнера */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //overflow: hidden; /* Скрытие части изображения, которая может выходить за пределы контейнера */
+  position: relative; /* Позиционирование для рамки */
+
+}
+
+
 
 .content-container {
     display: grid;
 }
 
+.mat-mdc-card-header {
+  display: flex;
+  flex-direction: column;
+  //align-items: center;
+  justify-content: center;
+}
+
 mat-card {
-    display: flex;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgb(19 37 47 /35%);
-    border-radius: 20px;
-    max-height: max-content;
-    background: rgb(19 37 47 / 25%);
-    background-image: linear-gradient(to top left,rgba(95, 97, 114, 0.377) 50%, transparent 50%);
-    background-size: 200% 200%;
-    background-repeat: no-repeat;
-    transition: .4s;
-    min-height: 320px;
+  display: flex;
+  max-height: max-content;
+  box-shadow: none !important;
+  background: inherit;
+  transition: .4s;
+  min-height: 320px;
+
+  mat-card-header {
+    align-items: center;
+  }
 
     mat-card-header,
     mat-card-subtitle,
@@ -51,7 +67,10 @@ mat-card {
     }
 
     mat-card-title {
-        color: rgb(101 105 105);
+      font-size: 18px;
+      color: rgb(75, 73, 71);
+      font-family: Pacifico, "Helvetica Neue", sans-serif;
+      font-weight: normal;
     }
 
 }
@@ -60,6 +79,7 @@ mat-card:hover{
 }
 
 mat-sidenav {
+  background: rgba(178, 160, 121, 0.1);
     width: 300px;
     padding-left: 20px;
 }
@@ -78,17 +98,20 @@ mat-sidenav-content {
     padding-top: 24px;
 }
 
+
+
 .wrapper {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(320px,1fr));
+    grid-template-rows: repeat(auto-fill, minmax(320px, 1fr));
     justify-content: center;
     padding: 20px;
 }
 
 mat-sidenav-container {
-    height: 100%;
+  background: inherit;
+  height: 100%;
 }
 
 .filters.search {

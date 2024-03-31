@@ -11,8 +11,13 @@ html {
 }
 
 body {
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: Pacifico, sans-serif;
     margin: 0;
+}
+
+* {
+  font-family: Pacifico, "Helvetica Neue", sans-serif;
+  transform: 0.3s;
 }
 
 app-root {

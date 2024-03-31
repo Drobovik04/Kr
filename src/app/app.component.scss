@@ -1,17 +1,26 @@
 :host {
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/images/textured-background.jpg");
 }
 
 .content {
   display: flex;
   flex: 1;
   overflow: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/images/textured-background.jpg");
 }
 
 .mat-mdc-tab-nav-bar {
+  background: rgba(166, 110, 53, 0.29) !important;
   display: flex;
   height: 50px;
-  background: rgb(19 37 47 / 25%);
+  //background: rgb(19 37 47 / 25%);
   z-index: 2;
 }

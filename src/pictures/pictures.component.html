@@ -1,43 +1,43 @@
 <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" opened>
-        <div class="filters search">
-            <mat-form-field appearance="outline">
-                <mat-label>Поиск по имени</mat-label>
-                <input matInput [formControl]="searchControl" (keydown.enter) = onSearch(searchControl.value) placeholder="Ввведите имя">
-                <mat-icon matSuffix (click)="onSearch(searchControl.value )">search</mat-icon>
-            </mat-form-field>
-            <button mat-icon-button matTooltip="Очистить фильтры" color="primary" class="reset" (click)="onClearAll()">
-                <mat-icon>delete_outline</mat-icon>
-            </button>
-        </div>
-        <div class="filters">
-            <div class="filter-container">
-                <div class="labelfortags_container">Жанр</div>
-                <mat-checkbox *ngFor="let genre of availableGenres" (change)="onSelectGenre($event, genre)" [value]="genre" color="primary" >{{ genre }}</mat-checkbox>
-            </div>
-            <div class="filter-container">
-                <div class="labelfortags_container">Стиль</div>
-                <mat-checkbox *ngFor="let style of availableStyles" (change)="onSelectStyle($event, style)" [value]="style" color="primary">{{ style }}</mat-checkbox>
-            </div>
-            <div class="filter-container">
-                <div class="labelfortags_container">Техника</div>
-                <mat-checkbox *ngFor="let technique of availableTechniques" (change)="onSelectTechnique($event, technique)" [value]="technique" color="primary" >{{ technique }}</mat-checkbox>
-            </div>
-        </div>
-    </mat-sidenav>
+  <mat-sidenav #sidenav mode="side" opened>
+    <div class="filters search">
+      <mat-form-field appearance="outline">
+        <mat-label>Поиск по имени</mat-label>
+        <input matInput [formControl]="searchControl" (keydown.enter)="onSearch(searchControl.value)" placeholder="Введите имя">
+        <mat-icon matSuffix (click)="onSearch(searchControl.value)">search</mat-icon>
+      </mat-form-field>
+      <button mat-icon-button matTooltip="Очистить фильтры" color="primary" class="reset" (click)="onClearAll()">
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+    </div>
+    <div class="filters">
+      <div class="filter-container">
+        <div class="labelfortags_container">Жанр</div>
+        <mat-checkbox *ngFor="let genre of availableGenres" (change)="onSelectGenre($event, genre)" [value]="genre" color="primary">{{ genre }}</mat-checkbox>
+      </div>
+      <div class="filter-container">
+        <div class="labelfortags_container">Стиль</div>
+        <mat-checkbox *ngFor="let style of availableStyles" (change)="onSelectStyle($event, style)" [value]="style" color="primary">{{ style }}</mat-checkbox>
+      </div>
+      <div class="filter-container">
+        <div class="labelfortags_container">Техника</div>
+        <mat-checkbox *ngFor="let technique of availableTechniques" (change)="onSelectTechnique($event, technique)" [value]="technique" color="primary">{{ technique }}</mat-checkbox>
+      </div>
+    </div>
+  </mat-sidenav>
 
-    <mat-sidenav-content class="content-container">
-        <div class="wrapper">
-            @for (picture of pictures; track picture) {
-            <mat-card class="card">
-                <mat-card-header>
-                    <img mat-card-image [src]="picture.path" alt="">
-                </mat-card-header>
-                <mat-card-subtitle>
-                    <mat-card-title>{{picture.name}}</mat-card-title>
-                </mat-card-subtitle>
-            </mat-card>
-            }
-        </div>
-    </mat-sidenav-content>
+  <mat-sidenav-content class="content-container">
+    <div class="wrapper">
+      <mat-card class="card" *ngFor="let picture of pictures">
+        <mat-card-header>
+          <div class="image-container">
+            <img class="mat-mdc-card-image" [src]="picture.path" alt="">
+          </div>
+        </mat-card-header>
+        <mat-card-subtitle>
+          <mat-card-title>{{picture.name}}</mat-card-title>
+        </mat-card-subtitle>
+      </mat-card>
+    </div>
+  </mat-sidenav-content>
 </mat-sidenav-container>

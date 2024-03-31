@@ -9,15 +9,17 @@
 }
 
 .mat-mdc-card-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  //align-items: center;
 }
 
 .mat-mdc-card-image {
     width: 220px;
     height: 220px;
+  object-fit: cover;
+  cursor: pointer;
+  box-shadow: 2px 2px 7px rgba(93, 93, 96, 0.28) !important;
 }
 
 .content-container {
@@ -30,17 +32,12 @@
 }
 
 mat-card {
-    display: flex;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgb(19 37 47 /35%);
-    border-radius: 20px;
-    max-height: max-content;
-    background: rgb(19 37 47 / 25%);
-    background-image: linear-gradient(to top left,rgba(95, 97, 114, 0.377) 50%, transparent 50%);
-    background-size: 200% 200%;
-    background-repeat: no-repeat;
-    transition: .4s;
-    min-height: 320px;
+  display: flex;
+  max-height: max-content;
+  box-shadow: none !important;
+  background: inherit;
+  transition: .4s;
+  min-height: 320px;
 
     mat-card-header,
     mat-card-subtitle,
@@ -56,7 +53,11 @@ mat-card {
     }
 
     mat-card-title {
-        color: rgb(101 105 105);
+      font-size: 18px;
+      font-family: Pacifico, "Helvetica Neue", sans-serif;
+      font-weight: normal;
+      color: rgb(75, 73, 71);
+
     }
 
 }
