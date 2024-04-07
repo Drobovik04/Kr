@@ -124,3 +124,9 @@ mat-checkbox{
     --mdc-checkbox-unselected-pressed-state-layer-color: transparent !important;
     --mdc-checkbox-selected-pressed-state-layer-color: transparent !important;
 }
+
+.deletebutton{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}

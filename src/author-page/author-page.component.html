@@ -6,7 +6,7 @@
         <input matInput [formControl]="searchControl" (keydown.enter)="onSearch(searchControl.value)" placeholder="Введите имя">
         <mat-icon matSuffix (click)="onSearch(searchControl.value)">search</mat-icon>
       </mat-form-field>
-      <button mat-icon-button matTooltip="Очистить фильтры" color="primary" class="reset" (click)="onClearAll()">
+      <button class="deletebutton" mat-icon-button matTooltip="Очистить фильтры" color="primary" class="reset" (click)="onClearAll()">
         <mat-icon>delete_outline</mat-icon>
       </button>
     </div>
